@@ -7,11 +7,9 @@ import java.util.GregorianCalendar;
 import com.abigail.couponsproject.DB.DAO.CompanyDao;
 import com.abigail.couponsproject.DB.DAO.CouponDao;
 import com.abigail.couponsproject.DB.DAO.CustomerDao;
-import com.abigail.couponsproject.DB.DAO.IdHandlerDao;
 import com.abigail.couponsproject.DB.DBDAO.CompanyDbDao;
 import com.abigail.couponsproject.DB.DBDAO.CouponDbDao;
 import com.abigail.couponsproject.DB.DBDAO.CustomerDbDao;
-import com.abigail.couponsproject.DB.DBDAO.IdHandlerDbDao;
 import com.abigail.couponsproject.beans.Company;
 import com.abigail.couponsproject.beans.Coupon;
 import com.abigail.couponsproject.beans.CouponType;
@@ -29,7 +27,6 @@ public class CouponSystemMain {
 		CompanyDao companyDao = new CompanyDbDao();
 		CustomerDao customerDao = new CustomerDbDao();
 		CouponDao couponDao = new CouponDbDao();
-		IdHandlerDao idHandler = new IdHandlerDbDao();
 
 		AdminFacade admin = new AdminFacade(companyDao, customerDao, couponDao);
 
