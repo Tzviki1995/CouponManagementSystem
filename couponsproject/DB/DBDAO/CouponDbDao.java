@@ -44,12 +44,12 @@ public class CouponDbDao implements CouponDao {
 			stmt.setString(9, coupon.getImage());
 
 			stmt.execute();
-
+                //TZVIA :should be Catch Exception e, you are not covering all cases
 		} catch (InterruptedException | SQLException e) {
 			throw new CouponSystemException(e, ExceptionType.COUPON_CREATION_FAILED,
 					"Sorry there! An error has occured while creating your coupon. Please try again");
 		} finally {
-			try {
+			try {//move this try catch to the connection pool
 				pool.returnConnection(conn);
 			} catch (Exception e) {
 				throw new CouponSystemException(e, ExceptionType.GENERAL_ERROR,
